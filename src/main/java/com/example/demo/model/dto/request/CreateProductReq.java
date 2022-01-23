@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateGoodsReq {
+public class CreateProductReq {
 
     private String name;
     private String description;

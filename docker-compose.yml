@@ -1,0 +1,19 @@
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  mongodb:
+    image: "bitnami/mongodb:5.0"
+    environment:
+      - MONGODB_USERNAME=app
+      - MONGODB_PASSWORD=pwd
+      - MONGODB_DATABASE=db
+    networks:
+      - app-tier
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb

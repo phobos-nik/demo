@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Data
 @Document(collection = "goods")
-public class Goods {
+public class Product {
 
     @Id
     private final UUID id;
