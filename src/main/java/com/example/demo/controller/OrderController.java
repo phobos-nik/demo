@@ -23,7 +23,9 @@ public class OrderController {
 
     @GetMapping
     public Mono<OrderResp> create(@RequestParam("user_id") UUID userId,
-                                  @RequestParam(value = "products_ids", required = false) Collection<UUID> productIds) {
+                                  @RequestParam(
+                                          value = "products_ids",
+                                          required = false) Collection<UUID> productIds) {
         return OrderResp.of(orderSvc.createOrder(userId, productIds));
     }
 

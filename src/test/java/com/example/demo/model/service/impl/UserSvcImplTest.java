@@ -35,7 +35,7 @@ class UserSvcImplTest {
     private UserSvc userSvc;
 
     @Container
-    static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:5.0.5");
+    static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:5.0.7");
 
     @DynamicPropertySource
     static void setProps(DynamicPropertyRegistry registry) {
