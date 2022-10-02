@@ -4,7 +4,7 @@ networks:
 
 services:
   mongodb:
-    image: "bitnami/mongodb:5.0"
+    image: "bitnami/mongodb:6.0"
     environment:
       - MONGODB_USERNAME=app
       - MONGODB_PASSWORD=pwd

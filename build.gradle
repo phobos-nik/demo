@@ -1,6 +1,6 @@
 plugins {
-	id 'org.springframework.boot' version '2.7.3'
-	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+	id 'org.springframework.boot' version '2.7.4'
+	id 'io.spring.dependency-management' version '1.0.14.RELEASE'
 	id 'java'
 }
 
@@ -24,19 +24,19 @@ repositories {
 }
 
 ext {
-	set('testcontainersVersion', "1.17.1")
+	set("testcontainersVersion", "1.17.1")
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
-	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	implementation platform('org.testcontainers:testcontainers-bom:1.17.1') //import bom
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'io.projectreactor:reactor-test'
-	testImplementation 'org.testcontainers:junit-jupiter'
-	testImplementation 'org.testcontainers:mongodb'
+	implementation "org.springframework.boot:spring-boot-starter-data-mongodb-reactive"
+	implementation "org.springframework.boot:spring-boot-starter-webflux"
+	implementation platform("org.testcontainers:testcontainers-bom:$testcontainersVersion") //import bom
+	compileOnly "org.projectlombok:lombok"
+	annotationProcessor "org.projectlombok:lombok"
+	testImplementation "org.springframework.boot:spring-boot-starter-test"
+	testImplementation "io.projectreactor:reactor-test"
+	testImplementation "org.testcontainers:junit-jupiter"
+	testImplementation "org.testcontainers:mongodb"
 }
 
 dependencyManagement {
