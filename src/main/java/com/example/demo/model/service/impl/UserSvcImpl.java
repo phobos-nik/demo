@@ -5,7 +5,6 @@ import com.example.demo.model.dao.repository.UserRep;
 import com.example.demo.model.dto.request.CreateUserReq;
 import com.example.demo.model.service.UserSvc;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
@@ -16,7 +15,6 @@ import java.util.UUID;
 public class UserSvcImpl implements UserSvc {
 
     private final UserRep userRep;
-    private final ReactiveMongoTemplate reactiveMongoTemplate;
 
     @Override
     public Mono<User> get(UUID id) {

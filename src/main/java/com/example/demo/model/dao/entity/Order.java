@@ -2,10 +2,9 @@ package com.example.demo.model.dao.entity;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.UUID;
 
 @Data
@@ -15,4 +14,5 @@ public class Order {
     @Id
     private final UUID id;
     private final UUID userId;
+    private final Collection<UUID> productIds;
 }
