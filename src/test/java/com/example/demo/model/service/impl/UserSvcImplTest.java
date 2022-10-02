@@ -6,9 +6,9 @@ import com.example.demo.model.service.UserSvc;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
+import org.springframework.test.context.junit.jupiter.EnabledIf;
 import org.testcontainers.containers.MongoDBContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
@@ -18,7 +18,7 @@ import reactor.test.StepVerifier;
 import java.util.Objects;
 
 @Testcontainers
-@ActiveProfiles("docker")
+@EnabledIf("#{T(java.util.Arrays).asList(environment.getActiveProfiles()).contains('testcontainers')}")
 @SpringBootTest
 class UserSvcImplTest {
 
@@ -26,7 +26,7 @@ class UserSvcImplTest {
     private UserSvc userSvc;
 
     @Container
-    static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:5.0.7");
+    static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:6.0");
 
     @DynamicPropertySource
     static void setProps(DynamicPropertyRegistry registry) {
