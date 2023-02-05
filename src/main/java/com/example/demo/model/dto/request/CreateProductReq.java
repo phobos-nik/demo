@@ -1,14 +1,7 @@
 package com.example.demo.model.dto.request;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class CreateProductReq {
-
-    private String name;
-    private String description;
+public record CreateProductReq (@JsonProperty String name,
+                                @JsonProperty String description) {
 }

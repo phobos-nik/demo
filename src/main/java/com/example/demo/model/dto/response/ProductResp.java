@@ -1,21 +1,12 @@
 package com.example.demo.model.dto.response;
 
 import com.example.demo.model.dao.entity.Product;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Data
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class ProductResp {
-
-    private String name;
-    private String description;
+public record ProductResp(@JsonProperty String name,
+                          @JsonProperty String description) {
 
     public static ProductResp of(Product product) {
-        ProductResp productResp = new ProductResp();
-        productResp.setName(product.getName());
-        productResp.setDescription(product.getDescription());
-        return productResp;
+        return new ProductResp(product.getName(), product.getDescription());
     }
 }

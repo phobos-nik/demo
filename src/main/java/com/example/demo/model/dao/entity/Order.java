@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Collection;
+import java.util.Map;
 import java.util.UUID;
 
 @Data
@@ -14,5 +14,5 @@ public class Order {
     @Id
     private final UUID id;
     private final UUID userId;
-    private final Collection<UUID> productIds;
+    private final Map<UUID, Integer> productIdCounts;
 }
