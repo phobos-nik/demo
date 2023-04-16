@@ -33,8 +33,8 @@ public class ProductSvcImpl implements ProductSvc {
     @Override
     public Mono<ProductResp> createGoods(CreateProductReq request) {
         return createGoods(
-                request.getName(),
-                request.getDescription())
+                request.name(),
+                request.description())
                 .map(ProductResp::of);
     }
 

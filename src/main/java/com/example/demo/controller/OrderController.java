@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
-import java.util.Collection;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController("/order")
@@ -25,8 +25,8 @@ public class OrderController {
     public Mono<OrderResp> create(@RequestParam("user_id") UUID userId,
                                   @RequestParam(
                                           value = "products_ids",
-                                          required = false) Collection<UUID> productIds) {
-        return OrderResp.of(orderSvc.createOrder(userId, productIds));
+                                          required = false) Map<UUID, Integer> productCount) {
+        return OrderResp.of(orderSvc.createOrder(userId, productCount));
     }
 
     @PostMapping

@@ -17,6 +17,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Map;
 import java.util.UUID;
 
 @Service
@@ -37,16 +38,16 @@ public class OrderSvcImpl implements OrderSvc {
                 new Order(
                         UUID.randomUUID(),
                         userId,
-                        Collections.emptyList()));
+                        Collections.emptyMap()));
     }
 
     @Override
-    public Mono<Order> createOrder(UUID userId, Collection<UUID> productIds) {
+    public Mono<Order> createOrder(UUID userId, Map<UUID, Integer> productCount) {
         return reactiveMongoTemplate.insert(
                 new Order(
                         UUID.randomUUID(),
                         userId,
-                        productIds));
+                        productCount));
     }
 
     @Override

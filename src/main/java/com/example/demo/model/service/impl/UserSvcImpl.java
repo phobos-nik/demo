@@ -25,9 +25,9 @@ public class UserSvcImpl implements UserSvc {
     public Mono<User> create(CreateUserReq request) {
         User newUser = new User(
                 UUID.randomUUID(),
-                request.getName(),
-                request.getSurname(),
-                request.getMiddleName());
+                request.name(),
+                request.surname(),
+                request.middleName());
         return userRep.save(newUser);
     }
 }
