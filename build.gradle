@@ -9,7 +9,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = JavaVersion.VERSION_17
 
 ext {
-	set("testcontainersVersion", "1.17.6")
+	set("testcontainersVersion", "1.18.0")
 }
 
 dependencies {
