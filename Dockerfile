@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jre-alpine as build
+FROM eclipse-temurin:17-jre-alpine AS build
 WORKDIR /workspace/app
 COPY . /workspace/app
 RUN --mount=type=cache,target=/root/.gradle ./gradlew clean build
